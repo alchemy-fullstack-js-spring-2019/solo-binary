@@ -12,7 +12,8 @@ console.log(newBuffer.toString());
 
 console.log(stringBuffer.toString());
 
-const mapped = buffer.map(item => item = 63)
+// eslint-disable-next-line no-unused-vars
+const mapped = buffer.map(() => 63);
 console.log(mapped.toString());
 
 console.log(hello.toString());
