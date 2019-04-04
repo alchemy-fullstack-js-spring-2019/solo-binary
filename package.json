@@ -1,0 +1,22 @@
+{
+  "name": "solo-binary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "npm run test -- --watch",
+    "buffer": "buffer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenParisot/solo-binary.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BenParisot/solo-binary/issues"
+  },
+  "homepage": "https://github.com/BenParisot/solo-binary#readme"
+}
