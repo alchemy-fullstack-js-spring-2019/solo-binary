@@ -1,5 +1,2 @@
-const buf = Buffer.alloc(10);
-
-const newBuf = buf.map(item => item = 104);
-
-console.log(newBuf.toString());
+const smile = Buffer.from([0xF0, 0x9F, 0x98, 0x81]);
+console.log(smile.toString());
