@@ -1,5 +1,5 @@
-const buf = Buffer.from('Megan');
+const buf = Buffer.alloc(10);
 
+const newBuf = buf.map(item => item = 104);
 
-
-console.log(buf.toString());
+console.log(newBuf.toString());
