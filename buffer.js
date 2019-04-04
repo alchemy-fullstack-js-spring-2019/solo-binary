@@ -1,2 +1,2 @@
-const smile = Buffer.from([0xF0, 0x9F, 0x98, 0x81]);
+const smile = Buffer.from([240, 159, 152, 129]);
 console.log(smile.toString());
