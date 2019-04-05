@@ -7,7 +7,7 @@ class LetterEmitter extends EventEmitter {
 
   read(str) {
     [...str].forEach((letter, i) => {
-      this.emit('letter', { letter: letter, offset: i });
+      this.emit('letter', { letter, offset: i });
     });
     this.emit('done');
   }
