@@ -11,6 +11,15 @@ class LetterEmitter extends EventEmitter {
     });
     this.emit('end');
   }
+  read2(word){
+    [...word].forEach((letter, offset) => {
+      this.emit('letterFound', {
+        letter,
+        offset 
+      });
+    });
+    this.emit('end');
+  }
 }
 
 module.exports = { LetterEmitter };

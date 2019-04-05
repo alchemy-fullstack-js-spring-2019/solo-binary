@@ -23,9 +23,15 @@ describe('LetterEmitter', () => {
     le.on('letterFound', mockhandler);
     le.on('end', () => {
       expect(mockhandler).toHaveBeenCalledTimes(string.length);
+      [...string].forEach((letter, offset) => {
+        expect(mockhandler).toHaveBeenCalledWith({
+          letter,
+          offset
+        });
+      });
       done();
     });
-    le.read(string);
+    le.read2(string);
   });
 
   it('splits string and emits an event for each letter', () => {
