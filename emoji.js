@@ -20,4 +20,8 @@ function emojiReplacer(buf, emoji, replacementEmoji) {
   return buf;
 }
 
+// THIS IS HOW YOU GET THE HEX VALUES OF EACH LETTER AND EMOJI
+// const newbuf = Buffer.from('hello 💨');
+// console.log(newbuf);
+
 console.log(buf.toString());
