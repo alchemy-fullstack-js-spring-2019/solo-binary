@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/leslieeshea/solo-binary#readme",
   "devDependencies": {
-    "eslint": "^5.16.0"
+    "eslint": "^5.16.0",
+    "jest": "^24.7.1"
   }
 }
