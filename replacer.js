@@ -1,11 +1,17 @@
-const charCode = Buffer.from([0xF0, 0x9F, 0x8C, 0xAD]);
-console.log(charCode.toString());
+const buf = Buffer.from('I really love 😍');
 
-const smile = Buffer.from([0xF0, 0x9F, 0x98, 0x8D]);
-smile.writeUInt32BE(charCode, 0);
-console.log(smile.toString());
+emojiReplacer(buf, '😍', '🌵');
+console.log(buf.toString());
 
-
-// function emojiReplacer(buf, emoji, replaceWithEmoji){
-
-// }
+function emojiReplacer(buf, emoji, replaceWithEmoji){
+  const emojiCharCode = Buffer.from(emoji).readUInt32BE();
+  const replaceEmojiCharCode = Buffer.from(replaceWithEmoji).readUInt32BE();
+  
+  for(let i = 0; i + 3 < buf.length; i++){
+    const potentialEmoji = buf.readUInt32BE(i);  
+    if(potentialEmoji === emojiCharCode){
+      buf.writeUInt32BE(replaceEmojiCharCode, i);
+    }
+  }
+  return buf;
+}
