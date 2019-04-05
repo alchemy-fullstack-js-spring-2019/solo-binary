@@ -7,9 +7,13 @@ describe('letter emitter', () => {
   });
 
   it('splits a string and emits event before each letter', () => {
-    expect().toEqual();
+    // make string
+    // make mock handeler
+    // make letter emitter on letter, letter mock handler
+    
+    expect().toHaveBeenCalled();
   });
 });
 
 
-// BRAIN FART
+// STUDY HOW TO DO THIS OVER WEEKEND
