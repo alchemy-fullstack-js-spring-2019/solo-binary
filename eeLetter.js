@@ -8,6 +8,11 @@ ee.on('letterFound', data => {
   console.log(`Received ${data}`);
 });
 
+[...word].forEach((letter) => {
+  ee.emit('letterFound', letter);
+});
 string.forEach((letter) => {
   ee.emit('letterFound', letter);
 });
+
+
