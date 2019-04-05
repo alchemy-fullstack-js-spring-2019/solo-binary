@@ -6,7 +6,7 @@ describe('LetterEmitter tests', () => {
     le = new LetterEmitter();
   });
 
-  it('splits a string and emits an event for each letter', () => {
+  it('splits a string and emits an event for each letter', done => {
     const mock = jest.fn();
     
     const str = 'test';
@@ -15,7 +15,11 @@ describe('LetterEmitter tests', () => {
       expect(letter.letter).toEqual(str[letter.offset]);
     });
 
+    le.once('end', () => {
+      expect(mock).toHaveBeenCalledTimes(str.length);
+      done();
+    });
+    
     le.read(str);
-    expect(mock).toHaveBeenCalledTimes(str.length);
   });
 });
