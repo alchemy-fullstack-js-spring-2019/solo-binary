@@ -9,6 +9,7 @@ class LetterEmitter extends EventEmitter {
       let i = 0;
       this.emit('letterFound', { letter: letter, offset: word[i] });
     });
+    this.emit('end');
   }
 }
 

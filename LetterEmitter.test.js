@@ -17,6 +17,17 @@ describe('LetterEmitter', () => {
     });
   });
 
+  it('splits string and emits an event for each letter', (done) => {
+    const string = 'banana';
+    const mockhandler = jest.fn();
+    le.on('letterFound', mockhandler);
+    le.on('end', () => {
+      expect(mockhandler).toHaveBeenCalledTimes(string.length);
+      done();
+    });
+    le.read(string);
+  });
+
   it('splits string and emits an event for each letter', () => {
     let string = 'banana';
     le.read(string);
