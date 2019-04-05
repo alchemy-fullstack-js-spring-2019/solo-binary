@@ -5,7 +5,6 @@ describe('it replaces an emoji with another emoji', () => {
         const emoji = '😃';
 
         const buf = Buffer.from(emoji);
-        console.log(buf);
 
         const replaceWithEmoji = '😍';
 
