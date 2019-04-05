@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "npm run test -- --watch",
-    "buffer": "buffer.js"
+    "buffer": "buffer.js",
+    "emoji": "emojiReplacer.js"
   },
   "repository": {
     "type": "git",

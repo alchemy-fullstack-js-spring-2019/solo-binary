@@ -1,4 +1,4 @@
-const emojiReplacer = require('../lib/emojiReplacer');
+const emojiReplacer = require('../emojiReplacer');
 
 describe('emoji replacer', () => {
   it('tests if emoji is replaced', () => {
