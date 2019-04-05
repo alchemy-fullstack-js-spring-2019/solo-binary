@@ -6,7 +6,7 @@ describe('LetterEmitter', () => {
     le = new LetterEmitter;
   });
 
-  it('splits string and emits an event for each letter', () => {
+  test('splits string and emits an event for each letter', () => {
     let string = 'banana';
     let counts = 0;
     le.read(string);
@@ -17,7 +17,7 @@ describe('LetterEmitter', () => {
     });
   });
 
-  it('splits string and emits an event for each letter', (done) => {
+  test('splits string and emits an event for each letter', (done) => {
     const string = 'banana';
     const mockhandler = jest.fn();
     le.on('letterFound', mockhandler);
@@ -34,7 +34,7 @@ describe('LetterEmitter', () => {
     le.read2(string);
   });
 
-  it('splits string and emits an event for each letter', () => {
+  test('splits string and emits an event for each letter', () => {
     let string = 'banana';
     le.read(string);
     le.on('letterFound', (data) => {
