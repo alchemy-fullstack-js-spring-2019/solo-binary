@@ -11,9 +11,17 @@ describe('LetterEmitter', () => {
         letterEmitter.on('letter', letterMockHandler);
         letterEmitter.on('end', () => {
             expect(letterMockHandler).toHaveBeenCalledTimes(str.length);
+            [...str].forEach((letter, offset) => {
+                expect(letterMockHandler).toHaveBeenCalledWith({ 
+                    letter, 
+                    offset 
+                });
+            });
             done();
-        })
-        letterEmitter.read(str)  
         });
+        letterEmitter.read(str);
+        
+        
     });
 });
+
