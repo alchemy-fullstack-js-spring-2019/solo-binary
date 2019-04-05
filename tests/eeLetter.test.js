@@ -1,4 +1,4 @@
-const LetterEmitter = require('./eeLetter.js');
+const LetterEmitter = require('../eeLetter');
 
 describe('letter emitter', () => {
   let letterEmitter = null;
@@ -6,10 +6,13 @@ describe('letter emitter', () => {
     letterEmitter = new LetterEmitter();
   });
   it('splits a string and emits an event for each letter', done => {
-    letterEmitter.on('letter', letter => {
-
+    let counter = jest.fn();
+    const str = 'Hi there';
+    letterEmitter.on('letter', counter);
+    letterEmitter.once('end', () => { 
+      expect(counter).toHaveBeenCalledTimes(str.length);
+      done(); 
     });
-
-    letterEmitter.once('end', () => { done(); });
+    letterEmitter.read(str);
   });
 });
