@@ -8,6 +8,18 @@ describe('LETTER EMITTER', () => {
   });
 
   it('splits a string and emits an event for each letter', () => {
-    expect(letterEmitter.read('junk')).toEqual('junk');
+    const string = 'scooby';
+    const mock = jest.fn();
+    
+    letterEmitter.on('letter', mock);
+
+    letterEmitter.on('end', (done) => {
+      // emit occurs for length of string
+      expect(mock).toHaveBeenCalledTimes(string.length);
+      done();
+    });
+    letterEmitter.read(string);
   });
+
+
 });
