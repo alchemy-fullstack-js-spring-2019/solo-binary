@@ -19,7 +19,7 @@ let mapBuff = Buffer.alloc(buffFromStr.length);
 
 mapBuff = buffFromStr.map(changeTo104);
 
-// console.log(mapBuff.toString());
+console.log(mapBuff.toString());
 
 function changeTo104() {
   return  104;
@@ -27,8 +27,8 @@ function changeTo104() {
 
 const smile = Buffer.from([0xF0, 0x9F, 0x98, 0x81]);
 
-// console.log(smile);
-// console.log(smile.toString());
+console.log(smile);
+console.log(smile.toString());
 
 const buff = Buffer.from('hi 😁 there 😁');
 
@@ -45,16 +45,12 @@ function emojiReplacer(buffer, emoji, replaceWithEmoji) {
   // [0xF09F9882]
   const replaceEmojiCharCode = Buffer.from(replaceWithEmoji).readUInt32BE();
 
-  // iterates through the buffer
-  // for(let i = 0; i + 4 < buffer.length; i++) {
-  //   console.log(i, buffer.length);
-  //   // looks for emoji
-  //   const potentialEmoji = buffer.readUInt32BE(i);
-  //   if(potentialEmoji === emojiCharCode) {
-  //     // when it finds, replaces with replaceWithEmoji
-  //     buffer.writeUInt16BE(replaceEmojiCharCode, i);
-  //   }
-  // }
+  for(let i = 0; i + 3 < buffer.length; i++) {
+    const potentialEmoji = buffer.readUInt32BE(i);
+    if(potentialEmoji === emojiCharCode) {
+      buffer.writeUInt32BE(replaceEmojiCharCode, i);
+    }
+  }
 
   return buffer;
 
