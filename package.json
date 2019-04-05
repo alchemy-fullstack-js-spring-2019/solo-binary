@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "ee": "node lib/ee.js"
+    "ee": "node lib/ee.js",
+    "eeData": "node lib/eeData.js"
   },
   "repository": {
     "type": "git",
