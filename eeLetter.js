@@ -1,4 +1,4 @@
-const EventEmitter = require('events');
+const { EventEmitter } = require('events');
 
 const ee = new EventEmitter();
 
@@ -11,3 +11,16 @@ const letterArray = data.split('');
 letterArray.forEach(letter => {
   ee.emit('letter', letter);
 });
+
+
+module.exports = class LetterEmitter extends EventEmitter {
+  constructor() {
+    super();
+  }
+  read(str) {
+    [...str].forEach(letter => {
+      this.emit('letter', letter);
+    });
+    ee.emit('end');
+  }
+};
