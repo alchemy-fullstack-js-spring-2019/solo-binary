@@ -4,9 +4,10 @@ class LetterEmitter extends EventEmitter {
   constructor(){
     super();
   }
-  read(string){
-    [...string].forEach((letter) => {
-      this.emit('letterFound', letter);
+  read(word){
+    [...word].forEach((letter) => {
+      let i = 0;
+      this.emit('letterFound', { letter: letter, offset: word[i] });
     });
   }
 }

@@ -11,6 +11,7 @@ ee.on('letterFound', data => {
 [...word].forEach((letter) => {
   ee.emit('letterFound', letter);
 });
+
 string.forEach((letter) => {
   ee.emit('letterFound', letter);
 });
