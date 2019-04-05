@@ -1,12 +1,10 @@
-const EventEmitter = require('events');
+const { EventEmitter } = require('events');
 
 const ee = new EventEmitter();
 
 ee.on('letter', data => {
   console.log(`RECEIVED: ${data}`);
-  data.split('').forEach(letter => {
-    console.log(letter);
-  });
+  data.split('').forEach(console.dir);
 });
 
 const data = 'Yes we did';
