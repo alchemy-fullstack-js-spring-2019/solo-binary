@@ -18,10 +18,10 @@ module.exports = class LetterEmitter extends EventEmitter {
     super();
   }
   read(str) {
-    [...str].forEach(letter => {
-      this.emit('letter', letter => {
-        return letter;
-        //   { letter: letter, offset: 20 };
+    [...str].forEach((letter, offset) => {
+      this.emit('letter', {
+        letter,
+        offset
       });
     });
     this.emit('end');
