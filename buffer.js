@@ -9,7 +9,7 @@ buf.writeInt8(101, 5);
 buf.writeInt8(114, 6);
 buf.writeInt8(101, 7);
 
-console.log(buf.toString());
+console.log(buf);
 
 const howdy = Buffer.alloc(14);
 
