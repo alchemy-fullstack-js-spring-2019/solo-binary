@@ -3,9 +3,11 @@ const EventEmitter = require('events');
 const ee = new EventEmitter();
 
 ee.on('letter', data => {
-  console.log(`RCEIVED: ${data}`);
+  console.log(`RECEIVED: ${data}`);
 });
 
 const data = 'Hello Dear Friend, how are you?';
-
-ee.emit('letter', data);
+const letterArray = data.split('');
+letterArray.forEach(letter => {
+  ee.emit('letter', letter);
+});
