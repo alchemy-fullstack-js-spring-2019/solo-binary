@@ -20,3 +20,11 @@ console.log(smile.toString('binary'));
 const emojiBuff = Buffer.from([0xF0, 0x9F, 0x98, 0x81]);
 console.log('emojis whaaat', emojiBuff.readUInt32BE(0).toString(16));
 console.log('emojis whaaat', emojiBuff.readUInt32LE(0).toString(16));
+
+const charCode = Buffer.from([0xF0, 0x9F, 0x98, 0x82]).readUInt32BE();
+console.log(charCode);
+
+const newSmile = Buffer.from([0xF0, 0x9F, 0x98, 0x81]);
+// console.log(newSmile.toString());
+newSmile.writeUInt32BE(charCode, 0);
+// console.log(newSmile.toString());
