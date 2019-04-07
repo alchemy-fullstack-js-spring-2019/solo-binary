@@ -6,7 +6,9 @@
   "scripts": {
     "test": "jest",
     "ee": "node lib/ee.js",
-    "eeData": "node lib/eeData.js"
+    "eeData": "node lib/eeData.js",
+    "eeLetter": "node lib/eeLetter.js",
+    "letterEmitter": "node lib/letterEmitter.js"
   },
   "repository": {
     "type": "git",
