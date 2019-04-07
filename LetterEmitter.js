@@ -18,6 +18,3 @@ module.exports = class LetterEmitter extends EventEmitter {
     this.emit('done');
   }
 };
-
-
-

@@ -7,4 +7,3 @@ ee.on('sit stitch', () => {
 });
 
 ee.emit('sit stitch');
-
