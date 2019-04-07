@@ -1,5 +1,4 @@
 const LetterEmitter = require('./LetterEmitter');
-//const ee = new LetterEmitter();
 
 describe('letter emitter', () => {
   let letterEmitter = null;
@@ -23,5 +22,4 @@ describe('letter emitter', () => {
     });
     letterEmitter.read(str);
   });
-  it('');
 });

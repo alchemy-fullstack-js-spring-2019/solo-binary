@@ -13,14 +13,15 @@ module.exports = class LetterEmitter extends EventEmitter {
     });
     this.emit('end');
     
-    // this.str = str;
-    // this.read = function read(str) {
-    //   let arrayed = str.split(', ');
-    //   arrayed.forEach(ee.emit('{ letter: \'b\', offset: 20 }'));
-    //   ee.on('{ letter: \'b\', offset: 20 }', element => {
-    //     console.log(element);
-    //   });
-    //   ee.emit(end());
-    // };  
+    this.str = str;
+    this.read = function read(str) {
+      let arrayed = str.split(', ');
+      arrayed.forEach(this.emit('{ letter: \'b\', offset: 20 }'), () => {
+        this.once('{ letter: \'b\', offset: 20 }', element => {
+          console.log(element);
+        });
+      });
+      this.emit('end');
+    };  
   }  
 };
