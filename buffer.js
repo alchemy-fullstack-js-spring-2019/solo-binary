@@ -1,7 +1,7 @@
 const buffy = Buffer.from('hello 😁 there 😋');
 
 emojiReplacer(buffy, '😂', '😂');
-console.log(buffy);
+
 
 function emojiReplacer(buffy, emoji, replaceEmoji) {
   const emojiCode = Buffer.from(emoji).readUInt32BE();
