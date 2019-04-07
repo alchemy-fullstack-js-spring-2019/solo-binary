@@ -5,12 +5,9 @@ function emojiReplacer(buf, emoji, replaceWithEmoji) {
     const potentialEmoji = buf.readUInt32BE(i);
     if(potentialEmoji === emojiCharCode) {
       buf.writeUInt32BE(replaceEmojiCharCode, i);
-      console.log(buf);
-      return buf.toString();
     }
   }
+  return buf.toString();
 }
-const buf = Buffer.from('I 😁 love 😁 emojis'); 
-emojiReplacer(buf, '😁', '😜');
 
 module.exports = emojiReplacer;
