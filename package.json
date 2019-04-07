@@ -21,5 +21,8 @@
   "devDependencies": {
     "eslint": "^5.16.0",
     "jest": "^24.7.1"
+  },
+  "dependencies": {
+    "event-emitter": "^0.3.5"
   }
 }
