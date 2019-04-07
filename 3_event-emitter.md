@@ -35,10 +35,10 @@
 
 ## Letter EventEmitter class
 
-* Create a `LetterEmitter` class in `LetterEmitter.js`
-  * `LetterEmitter` should `extends` `EventEmitter`
-* Write a `read(str)` method that takes a string
-  * read should `split` the string into letters
+<!-- * Create a `LetterEmitter` class in `LetterEmitter.js` -->
+  <!-- * `LetterEmitter` should `extends` `EventEmitter` -->
+<!-- * Write a `read(str)` method that takes a string -->
+  <!-- * read should `split` the string into letters -->
   * `forEach` letter it should emit an event
     * the event should include the data `{ letter: 'b', offset: 20 }`
   * once it is done it should emit an "end" event
