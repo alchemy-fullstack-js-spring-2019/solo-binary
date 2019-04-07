@@ -18,7 +18,7 @@ buff.writeInt8(33, 11);  // !
 console.log(buff);
 
 // output: <Buffer 48 66 6c 6c 6f 20 54 68 66 72 66 21>
-// Hello There! (in Binary)
+// Hello There! (in Binary).
 
 console.log(buff.toString());
 
@@ -29,6 +29,14 @@ console.log(buff.toString());
 const buffy = Buffer.from('Buffer The Vampire Slougher');
 console.log(buffy.toString());
 
+// # WRITE OVER BUFFER VALUES
+
+let buffout = Buffer.from('Crawl Out Through The Fallout');
+function changeIt() {
+  buffout = 104;
+}
+console.log(buffout.map(changeIt));
+
 // ## BUFFER FROM HEX CODES
 
 const smile = Buffer.from([0xF0, 0x9F, 0x98, 0x81]);
@@ -36,19 +44,25 @@ console.log(smile);
 
 // ## EMOJI REPLACER
 
-const buffish = Buffer.from('hi EMOJI-1 there');
+const buffish = Buffer.from('hi 😁 there 😁');
 
-function emojiReplacer(buffish, emoji = [0xF0, 0x9F, 0x98, 0x81], replaceWithNewEmoji = [0xF0, 0x9F, 0x98, 0x85]) {
-  //let emoji = ;
+emojiReplacer(buffish, '😁', '😂');
+console.log(buffish.toString());
+
+[2, 3, 4, 5];
+[8, 9, 1, 1];
+[1, 8, 9, 1, 1, 6, 7, 8, 9];
+
+function emojiReplacer(buffish, emoji, replaceWithEmoji) {
   const emojiCharCode = Buffer.from(emoji).readUInt32BE();
-  const replaceEmojiCharCode = Buffer.from(replaceWithNewEmoji).readUInt32BE();
+  const replaceEmojiCharCode = Buffer.from(replaceWithEmoji).readUInt32BE();
 
-  for(let i = 0; i < buffish.length; i++) {
-    buffish.readUInt32BE(i);
+  for(let i = 0; i + 3 < buffish.length; i++) {
+    const potentialEmoji = buffish.readUInt32BE(i);
+    if(potentialEmoji === emojiCharCode) {
+      buffish.writeUInt32BE(replaceEmojiCharCode, i);
+    }
   }
-  console.log(emojiCharCode);
-  return replaceEmojiCharCode;
+
+  return buffish;
 }
-
-console.log(emojiReplacer);
-
