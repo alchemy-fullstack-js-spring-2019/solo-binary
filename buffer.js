@@ -1,20 +1,18 @@
-// hi there
-const buffy = Buffer.alloc(10);
+const buffy = Buffer.from('hello 😁 there 😋');
 
-buffy.writeInt8(0x68, 0);
-buffy.writeInt8(0x69, 1);
-buffy.writeInt8(0x20, 2);
-buffy.writeInt8(0x74, 1);
+emojiReplacer(buffy, '😂', '😂');
+console.log(buffy);
 
-// console.log(buffy.toString());
-// console.log(buffy);
+function emojiReplacer(buffy, emoji, replaceEmoji) {
+  const emojiCode = Buffer.from(emoji).readUInt32BE();
+  const replaceEmojiCode = Buffer.from(replaceEmoji).readUInt32BE();
 
-
-const emoji = Buffer.from([0xF0, 0x9F, 0x98, 0x81]);
-// console.log(emoji.toString());
-const buffEmoji = 
-
-[0xF0, 0x9F, 0x98, 0x8B]
-emojiReplacer(buffy, '😁', '😋');
-console.log(buffy.tostring());
+  for(let i = 0; i + 3 < buffy.length; i++) {
+    const possibleEmoji = buffy.readUInt32BE(i);
+    if(possibleEmoji === emojiCode) {
+      buffy.writeUInt32BE(replaceEmojiCode, i);
+    }
+  }
+  return buffy;
+}
 
