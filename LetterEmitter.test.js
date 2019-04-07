@@ -13,14 +13,15 @@ describe('letter emitter', () => {
     letterEmitter.on('letter', letterMockHandler);
 
     letterEmitter.on('end', () => {
-      expect(letterMockHandler).toHaveBeenCalledTimes(str.length),
+      expect(letterMockHandler).toHaveBeenCalledTimes(str.length);
       [...str].forEach((letter, offset) => {
         expect(letterMockHandler).toHaveBeenCalledWith({
           letter,
           offset
         });
-      }
-    })
+      });
+    });
     letterEmitter.read(str);
   });
+  it('');
 });

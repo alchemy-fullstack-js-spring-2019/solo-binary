@@ -1,7 +1,8 @@
 //##  HI THERE BUFFER
 const buff = Buffer.alloc(12);
 
-//buf.writeInt8(content, indexToPutIn)
+//Note: buf.writeInt8(content, indexToPutIn)
+
 buff.writeInt8(72, 0);  // H
 buff.writeInt8(101, 1); // e
 buff.writeInt8(108, 2); // l
@@ -66,3 +67,7 @@ function emojiReplacer(buffish, emoji, replaceWithEmoji) {
 
   return buffish;
 }
+
+module.exports = {
+  emojiReplacer
+};

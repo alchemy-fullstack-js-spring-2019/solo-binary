@@ -13,7 +13,6 @@ const data = [
   new Data('ECMA6', 'Some Teacher', 1000)
 ];
 
-
 ee.on('we did it with data', () => {
   console.log(data);
 });

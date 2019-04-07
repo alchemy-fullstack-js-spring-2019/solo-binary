@@ -12,6 +12,7 @@ module.exports = class LetterEmitter extends EventEmitter {
       });
     });
     this.emit('end');
+    
     // this.str = str;
     // this.read = function read(str) {
     //   let arrayed = str.split(', ');
