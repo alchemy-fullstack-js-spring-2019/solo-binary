@@ -28,3 +28,4 @@ function emojiReplacer(buf, emoji, replaceWithEmoji) {
   const emojiCharCode = Buffer.from(emoji).readUInt32BE();
   const replaceEmojiCharCode = Buffer.from(replaceWIthEmoji);
 }
+

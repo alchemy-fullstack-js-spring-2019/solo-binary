@@ -4,8 +4,9 @@
   "description": "",
   "main": "read.js",
   "scripts": {
-    "test": "jest",
-    "start": "node ./buffer.js"
+    "test": "jest --verbose",
+    "start": "node ./",
+    "test:watch": "npm run test -- --watch" 
   },
   "repository": {
     "type": "git",
