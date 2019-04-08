@@ -1,16 +1,21 @@
 const { EventEmitter } = require('events');
 
-module.expots = class LetterEmitter extends EventEmitter {
+module.exports = class LetterEmitter extends EventEmitter {
   constructor() {
-    // WHAT AM I DOING????
     super();
   }
 
   read(str) {
-    str.split('').forEach(letter => {
-      ee.emit('letter', letter);
-      
+    const pattern = /[a-z]/i;
+    [...str].forEach((letter, offset) => {
+      if(pattern.test(letter)) {
+        this.emit('letter', {
+          letter,
+          offset
+        });
+      }
     });
 
+    this.emit('end');
   }
 };

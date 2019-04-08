@@ -6,12 +6,27 @@ describe('letter emitter', () => {
     letterEmitter = new LetterEmitter();
   });
 
-  it('splits a string and emits event before each letter', () => {
-    // make string
-    // make mock handeler
-    // make letter emitter on letter, letter mock handler
+  it('splits a string and emits event before each letter', done => {
+    const str = 'Hi how are you?';
+    const pattern = /[a-z]/i;
+    const letterMockHandler = jest.fn();
+
+    letterEmitter.on('letter', letterMockHandler);
+
+    letterEmitter.once('end', () => {
+      expect(letterMockHandler).toHaveBeenCalledTimes(11);
+      [...str].forEach((letter, offset) => {
+        if(pattern.test(letter)) {
+          expect(letterMockHandler).toHaveBeenCalledWith({
+            letter,
+            offset
+          });
+        }
+      });
+      done();
+    });
     
-    expect().toHaveBeenCalled();
+    letterEmitter.read(str);
   });
 });
 
