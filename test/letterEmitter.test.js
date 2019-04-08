@@ -13,8 +13,6 @@ describe('Letter Emitter', ()=> {
 
         letterEmitter.on('letter', letterMock);
 
-        //offset is position in array...?
-
         letterEmitter.once('end', () => {
             expect(letterMock).toHaveBeenCalledTimes(10);
             [...str].forEach((letter, offset) => {
