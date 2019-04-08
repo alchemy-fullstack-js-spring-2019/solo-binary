@@ -1,25 +1,29 @@
-const LetterEmitter = require('../lib/LetterEmitter');
+const LetterEmitter = require('../lib/letterEmitter.js');
 
-describe('letter emitter finction', () => {
-  let LetterEmitter = null;
+describe('letterEmitter', () => {
+  let letterEmitter = null;
+  
   beforeEach(() => {
-    LetterEmitter = new LetterEmitter();
+    letterEmitter = new LetterEmitter();
   });
-  
-  
-  it('letter obj has letter', done => {
-    const string = 'howdy';
-    const letterMock = jest.fn();
 
-    LetterEmitter.on('letter object', letterMock);
+  it('print each letter', (done) => {
+    const str = 'read this';
+    const letterMockHandler = jest.fn();
 
-    LetterEmitter.on('end', () => {
-      expect(letterMock).toHaveBeenCalled(string.length);
-      [...string].forEach((letter, offset) => {
-        expect(letterMock).toHaveBeenCalled({ letter, offset });
+    letterEmitter.on('letter', letterMockHandler);
+    
+    letterEmitter.once('end', () => {
+      expect(letterMockHandler).toHaveBeenCalledTimes(9);
+      [...str].forEach((letter, offset) => {
+        expect(letterMockHandler).toHaveBeenCalledWith({
+          letter,
+          offset
+        });
       });
       done();
     });
-    LetterEmitter.read(string);
+    
+    letterEmitter.read(str);
   });
 });
