@@ -1,8 +1,6 @@
 const buf = Buffer.from([0x4f, 0x68, 0x20, 0x73, 0x68, 0x69, 0x74, 0x20, 0xf0, 0x9f, 0x92, 0xa8]);
 const gas = Buffer.from([0xf0, 0x9f, 0x92, 0xa8]); 
-// 💨
 const poo = Buffer.from([0xF0, 0x9F, 0x92, 0xA9]);
-// 💩
 
 emojiReplacer(buf, gas, poo);
 
@@ -19,11 +17,5 @@ function emojiReplacer(buf, emoji, replacementEmoji) {
   
   return buf;
 }
-
-// THIS IS HOW YOU GET THE HEX VALUES OF EACH LETTER AND EMOJI
-// const newbuf = Buffer.from('hello 💨');
-// console.log(newbuf);
-// var str = newbuf.toString();
-// console.log(str);
 
 console.log(buf.toString());

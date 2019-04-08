@@ -29,6 +29,3 @@ describe('letter emitter', () => {
     letterEmitter.read(str);
   });
 });
-
-
-// STUDY HOW TO DO THIS OVER WEEKEND

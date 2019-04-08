@@ -6,7 +6,7 @@ ee.on('userCreated', data => {
   console.log(`notify manager ${data.name}`);
 });
 
-ee.on('userCreated', data => {
+ee.on('userCreated', () => {
   console.log('analyzing data');
 });
 
