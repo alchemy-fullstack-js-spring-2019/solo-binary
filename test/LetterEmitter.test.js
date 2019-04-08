@@ -14,7 +14,6 @@ describe('LETTER EMITTER', () => {
     letterEmitter.on('letter', mock);
 
     letterEmitter.on('end', (done) => {
-      // emit occurs for length of string
       expect(mock).toHaveBeenCalledTimes(string.length);
       done();
     });
