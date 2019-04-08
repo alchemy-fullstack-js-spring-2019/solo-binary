@@ -2,8 +2,8 @@ const { UserList } = require('../scratchwork/events-demo.js');
 
 const user = new UserList;
 let id = 1;
-user.on('saved-user', function(user) {
-    console.log('saved: ' + user.name + ' ' + user.uid + ' ' + user.occupation);
+user.on('saved-user', function(pants) {
+    console.log('saved: ' + pants.name + ' ' + pants.uid + ' ' + pants.occupation);
 });
 
 setInterval(() => {
