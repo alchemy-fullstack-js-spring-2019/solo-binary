@@ -1,19 +1,29 @@
-const LetterEmitter = require('../lib/letterEmitter');
+const LetterEmitter = require('../lib/LetterEmitter');
 
 describe('Letter Emitter', ()=> {
     let letterEmitter = null;
     beforeEach(()=> {
-        letterEmitter = new LetterEmitter;
+        letterEmitter = new LetterEmitter();
     });
 
     it('takes a string and emits and event for every letter in string', done => {
-        const str = "cool string";
+        const str = 'cool String!';
+        const pattern = /[a-z]/i;
         const letterMock = jest.fn();
 
         letterEmitter.on('letter', letterMock);
 
-        letterEmitter.on('end'. () => {
-            expect(letterMock).to
-        })
-    } )
+        //offset is position in array...?
+
+        letterEmitter.once('end', () => {
+            expect(letterMock).toHaveBeenCalledTimes(10);
+            [...str].forEach((letter, offset) => {
+                if(pattern.test(letter)) {
+                    expect(letterMock).toHaveBeenCalledWith({ letter, offset });
+                }
+            });
+            done();
+        });
+        letterEmitter.read(str);
+    });
 });
