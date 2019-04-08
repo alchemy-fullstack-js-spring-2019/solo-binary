@@ -35,19 +35,19 @@
 
 ## Letter EventEmitter class
 
-* Create a `LetterEmitter` class in `LetterEmitter.js`
-  * `LetterEmitter` should `extends` `EventEmitter`
-* Write a `read(str)` method that takes a string
-  * read should `split` the string into letters
-  * `forEach` letter it should emit an event
+<!-- * Create a `LetterEmitter` class in `LetterEmitter.js` -->
+  <!-- * `LetterEmitter` should `extends` `EventEmitter` -->
+<!-- * Write a `read(str)` method that takes a string -->
+  <!-- * read should `split` the string into letters -->
+  <!-- * `forEach` letter it should emit an event
     * the event should include the data `{ letter: 'b', offset: 20 }`
-  * once it is done it should emit an "end" event
+  * once it is done it should emit an "end" event -->
   * **START WITH TESTS**
 * TEST
-  * create a new `LetterEmitter` `beforeEach` test
-  * `it` splits a string and emits an event for each letter
-    * use `on` to subscribe to letter events
-    * count the number of times the `on` callback is called
+  <!-- * create a new `LetterEmitter` `beforeEach` test -->
+  <!-- * `it` splits a string and emits an event for each letter -->
+    <!-- * use `on` to subscribe to letter events -->
+    <!-- * count the number of times the `on` callback is called -->
       * BONUS/HINT: use `jest.fn()`
     * use `once` to subscribe to the end event
       * what's the difference between `on` and `once`?
