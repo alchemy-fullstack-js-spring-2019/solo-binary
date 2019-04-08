@@ -1,4 +1,4 @@
-const LetterEmitter = require('../lib/LetterEmitter');
+const { LetterEmitter } = require('../lib/LetterEmitter');
 
 describe('LETTER EMITTER', () => {
   
@@ -13,9 +13,8 @@ describe('LETTER EMITTER', () => {
     
     letterEmitter.on('letter', mock);
 
-    letterEmitter.on('end', (done) => {
+    letterEmitter.once('end', () => {
       expect(mock).toHaveBeenCalledTimes(string.length);
-      done();
     });
     letterEmitter.read(string);
   });
