@@ -1,4 +1,4 @@
-const LetterEmitter = require('../lib/LetterEmitter');
+const LetterEmitter = require('../lib/letterEmitter');
 
 describe('Letter Emitter', ()=> { 
     let letterEmitter = null;
