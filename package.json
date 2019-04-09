@@ -1,0 +1,27 @@
+{
+  "name": "solo-binary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "buffer.js",
+  "dependencies": {
+    "eslint": "^5.16.0",
+    "jest": "^24.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest --verbose",
+    "test:watch": "npm run test -- --watch",
+    "start": "LetterEmitter.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miniponz/solo-binary.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miniponz/solo-binary/issues"
+  },
+  "homepage": "https://github.com/miniponz/solo-binary#readme"
+}
