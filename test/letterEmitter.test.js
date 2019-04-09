@@ -1,6 +1,6 @@
 const LetterEmitter = require('../lib/LetterEmitter');
 
-describe('Letter Emitter', ()=> {
+describe('Letter Emitter', ()=> { 
     let letterEmitter = null;
     beforeEach(()=> {
         letterEmitter = new LetterEmitter();
