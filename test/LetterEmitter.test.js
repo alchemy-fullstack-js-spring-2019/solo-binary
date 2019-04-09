@@ -19,5 +19,4 @@ describe('LETTER EMITTER', () => {
     letterEmitter.read(string);
   });
 
-
 });

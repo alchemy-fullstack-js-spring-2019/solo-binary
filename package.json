@@ -1,5 +1,5 @@
 {
-  "name": "functions",
+  "name": "solo-binary",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/parkerchristian/functions.git"
+    "url": "git+https://github.com/parkerchristian/solo-binary.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/parkerchristian/functions/issues"
+    "url": "https://github.com/parkerchristian/solo-binary/issues"
   },
-  "homepage": "https://github.com/parkerchristian/functions#readme",
+  "homepage": "https://github.com/parkerchristian/solo-binary#readme",
   "dependencies": {},
   "devDependencies": {
     "eslint": "^5.16.0",
