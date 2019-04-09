@@ -9,11 +9,11 @@ emptyBuffer.writeInt8(0x65, 5);
 emptyBuffer.writeInt8(0x72, 6);
 emptyBuffer.writeInt8(0x65, 7);
   
-// console.log(emptyBuffer.toString());
+console.log(emptyBuffer.toString());
 
 const buffFromStr = Buffer.from('hello world');
 
-// console.log(buffFromStr.toString());
+console.log(buffFromStr.toString());
 
 let mapBuff = Buffer.alloc(buffFromStr.length);
 
@@ -36,13 +36,8 @@ emojiReplacer(buff, '😁', '😂');
 
 console.log(buff.toString());
 
-// orig [0xF0, 0x9F, 0x98, 0x81]
-// new [0xF0, 0x9F, 0x98, 0x82]
-
 function emojiReplacer(buffer, emoji, replaceWithEmoji) {
-  // [0xF09F9881]
   const emojiCharCode = Buffer.from(emoji).readUInt32BE();
-  // [0xF09F9882]
   const replaceEmojiCharCode = Buffer.from(replaceWithEmoji).readUInt32BE();
 
   for(let i = 0; i + 3 < buffer.length; i++) {
