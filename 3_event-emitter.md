@@ -1,5 +1,20 @@
 # Event Emitter
+Event emitters all you to create your own custom events. 
 
+ee.on() = lets you listen to events, similar to addEventListener
+format:
+  ee.on('myEvent', () => {});
+ee.emit() = lets you fire an event from an ee.on function
+formate: 
+  ee.emit('myEvent', () => {});
+
+example:
+ee.on('myCoolEvent', () => {
+  console.log('hi'); //does not do anything yet
+});
+ee.emit('myCoolEvent', () => {
+  
+});
 ## Simple EventEmitter
 
 * Create an `ee.js`
