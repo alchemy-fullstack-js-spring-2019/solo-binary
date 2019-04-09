@@ -1,7 +1,7 @@
 const buf = Buffer.from('I really love 😍');
 
 emojiReplacer(buf, '😍', '🌵');
-console.log(buf.toString());
+console.log(buf.toString);
 
 function emojiReplacer(buf, emoji, replaceWithEmoji){
   const emojiCharCode = Buffer.from(emoji).readUInt32BE();

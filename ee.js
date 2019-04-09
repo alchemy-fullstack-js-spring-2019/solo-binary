@@ -11,7 +11,3 @@ setTimeout(() => {
 }, 1000);
 
 
-
-//addEventListener('click', () => {})
-//ee.on('myEvent', () => {}) <-- 'myEvent' is the event you are listening for.
-//ee.emit() <--eit the event you are listening for.
