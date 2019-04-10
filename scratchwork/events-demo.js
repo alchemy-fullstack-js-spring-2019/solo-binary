@@ -26,7 +26,6 @@ class UserList extends EventEmitter {
     }
 }
 
-
 module.exports = {
     UserList
 };
