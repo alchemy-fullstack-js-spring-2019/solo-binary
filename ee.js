@@ -5,7 +5,7 @@ const ee = new EventEmitter();
 
 
 ee.on('letter', letter => {
-  console.log(`RECIEVED': ${letter}`);
+  return (`RECIEVED': ${letter}`);
 });
 
 const letters = 'whats up';
