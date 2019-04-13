@@ -18,7 +18,7 @@ module.exports = class LetterEmitter extends EventEmitter {
       let arrayed = str.split(', ');
       arrayed.forEach(this.emit('{ letter: \'b\', offset: 20 }'), () => {
         this.once('{ letter: \'b\', offset: 20 }', element => {
-          console.log(element);
+          return element;
         });
       });
       this.emit('end');
