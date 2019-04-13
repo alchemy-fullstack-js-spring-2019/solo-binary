@@ -13,28 +13,31 @@ buff.writeInt8(114, 9);
 buff.writeInt8(101, 10);
 buff.writeInt8(33, 11);
 
-console.log(buff);
+console.log('buff', buff);
 
-console.log(buff.toString());
+console.log('buff.toString()', buff.toString());
 
 const buffy = Buffer.from('Buffer The Vampire Slougher');
-console.log(buffy.toString())
+console.log('buffy.toString()', buffy.toString());
 
 let buffout = Buffer.from('Crawl Out Through The Fallout');
 function changeIt() {
+  //return buffout = 104;
   buffout = 104;
+  //console.log('changeit/buffout:', buffout);
+  return buffout;
 }
-console.log(buffout.map(changeIt));
+console.log('buffout.map(changeIt)', buffout.map(changeIt));
 
 
 const smile = Buffer.from([0xF0, 0x9F, 0x98, 0x81]);
-console.log(smile);
+console.log('smile', smile);
 
 
 const buffish = Buffer.from('hi 😁 there 😁');
 
 emojiReplacer(buffish, '😁', '😂');
-console.log(buffish.toString());
+console.log('buffish.toString()', buffish.toString());
 
 [2, 3, 4, 5];
 [8, 9, 1, 1];
