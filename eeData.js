@@ -13,8 +13,8 @@ const data = [
   new Data('ECMA6', 'Some Teacher', 1000)
 ];
 
-ee.on('we did it with data', () => {
+ee.on('we did it with data', data => {
   console.log(data);
 });
 
-ee.emit('we did it with data');
+ee.emit('we did it with data', data);
