@@ -22,16 +22,13 @@ console.log('buffy.toString()', buffy.toString());
 
 let buffout = Buffer.from('Crawl Out Through The Fallout');
 function changeIt() {
-  //return buffout = 104;
   buffout = 104;
-  //console.log('changeit/buffout:', buffout);
   return buffout;
 }
 console.log('buffout.map(changeIt)', buffout.map(changeIt));
 
 const smile = Buffer.from([0xF0, 0x9F, 0x98, 0x81]);
 console.log('smile', smile);
-
 
 const buffish = Buffer.from('hi 😁 there 😁');
 
