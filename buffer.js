@@ -10,8 +10,11 @@ buf.writeInt8(0x72, 6);
 buf.writeInt8(0x65, 7);
 
 const fromBuf = Buffer.from('Mal');
+console.log(fromBuf.toString());
 
 const writeOver = buf.map(function(){});
+console.log(writeOver.toString());
 
 const emoji = Buffer.from([0xF0, 0x9F, 0x98, 0x8D]);
 console.log(emoji.toString());
+
