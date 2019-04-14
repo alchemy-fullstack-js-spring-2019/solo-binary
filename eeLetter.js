@@ -10,4 +10,4 @@ ee.on('letters', data => {
 
 letters.split('').forEach(letter => {
   ee.emit('letters', letter);
-})
+});
