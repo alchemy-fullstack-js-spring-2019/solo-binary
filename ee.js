@@ -1,6 +1,3 @@
-// ee.on('myEvent', () => {}) listens to ee.emit
-// ee.emit() triggers the event
-
 const { EventEmitter } = require('events');
 
 const ee = new EventEmitter();
